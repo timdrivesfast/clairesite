@@ -1,0 +1,32 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars if the content overflows */
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    position: relative; /* Makes it a container for absolutely positioned elements */
+}
+
+.color-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chairImage {
+    max-width: 100%; /* Keeps image responsive */
+    max-height: 100%;
+    /* If you know the size of your images, you can set a fixed width and height */
+    /* width: 300px; */
+    /* height: 300px; */
+}
