@@ -11,10 +11,11 @@ function setDailyContent() {
 
     fetchDailyChairImage(dayOfYear);
     setDailyPantoneColor(dayOfYear);
+    setDailyQuote(dayOfYear); // Added to set the daily quote
 }
 
 function fetchDailyChairImage(dayOfYear) {
-    const apiKey = 'vWTC7Hd2emQZMPuhuLArr6l1EG4E7RMNRcJcx2MFXUw';
+    const apiKey = 'YOUR_UNSPLASH_ACCESS_KEY'; // Ensure to use your actual API key
     const url = `https://api.unsplash.com/photos/random?query=chair&client_id=${apiKey}`;
 
     fetch(url)
@@ -30,7 +31,7 @@ function fetchDailyChairImage(dayOfYear) {
         })
         .catch(error => {
             console.error('Error fetching image:', error);
-            // Implement fallback image or error handling
+            // Fallback or error handling
         });
 }
 
@@ -55,8 +56,62 @@ function setDailyPantoneColor(dayOfYear) {
         '#0000CD', '#BA55D3', '#9370DB', '#3CB371', '#7B68EE', 
         '#00FA9A', '#48D1CC', '#C71585', '#191970', '#F5FFFA', 
         '#FFE4E1', '#FFE4B5', '#FFDEAD', '#000080', '#FDF5E6', 
-        '#808000', '#6B8E23', '#FFA500', '#FF4500', '#DA70D6'
+        '#808000', '#6B8E23', '#FFA500', '#FF4500', '#DA70D6',
+        '#F0F8FF', '#FAEBD7', '#00FFFF', '#7FFFD4', '#F0FFFF', 
     ];
     const selectedColor = colors[dayOfYear % colors.length];
     document.getElementById('colorBackground').style.backgroundColor = selectedColor;
 }
+
+function setDailyQuote(dayOfYear) {
+    const quotes = [
+        "The best time to plant a tree was 20 years ago. The second best time is now. – Chinese Proverb",
+        "It’s not what you look at that matters, it’s what you see. – Henry David Thoreau",
+        "The only way to do great work is to love what you do. – Steve Jobs",
+        "An unexamined life is not worth living. – Socrates",
+        "Happiness is not something readymade. It comes from your own actions. – Dalai Lama",
+        "The whole secret of a successful life is to find out what is one’s destiny to do, and then do it. – Henry Ford",
+        "What you get by achieving your goals is not as important as what you become by achieving your goals. – Zig Ziglar",
+        "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. – James Cameron",
+        "Life is 10% what happens to us and 90% how we react to it. – Charles R. Swindoll",
+        "To live is the rarest thing in the world. Most people exist, that is all. – Oscar Wilde",
+        "In order to write about life first you must live it. – Ernest Hemingway",
+        "The big lesson in life, baby, is never be scared of anyone or anything. – Frank Sinatra",
+        "Curiosity about life in all of its aspects, I think, is still the secret of great creative people. – Leo Burnett",
+        "Life is not a problem to be solved, but a reality to be experienced. – Søren Kierkegaard",
+        "The unexamined life is not worth living. – Socrates",
+        "Turn your wounds into wisdom. – Oprah Winfrey",
+        "The way to get started is to quit talking and begin doing. – Walt Disney",
+        "The purpose of our lives is to be happy. – Dalai Lama",
+        "Life is what happens when you’re busy making other plans. – John Lennon",
+        "Get busy living or get busy dying. – Stephen King",
+        "You only live once, but if you do it right, once is enough. – Mae West",
+        "Many of life’s failures are people who did not realize how close they were to success when they gave up. – Thomas A. Edison",
+        "If you want to live a happy life, tie it to a goal, not to people or things. – Albert Einstein",
+        "Never let the fear of striking out keep you from playing the game. – Babe Ruth",
+        "Money and success don’t change people; they merely amplify what is already there. – Will Smith",
+        "Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking. – Steve Jobs",
+        "Not how long, but how well you have lived is the main thing. – Seneca",
+        "If life were predictable it would cease to be life, and be without flavor. – Eleanor Roosevelt",
+        "The whole secret of a successful life is to find out what is one’s destiny to do, and then do it. – Henry Ford",
+        "In order to write about life first you must live it. – Ernest Hemingway",
+        "The big lesson in life, baby, is never be scared of anyone or anything. – Frank Sinatra",
+        "Sing like no one’s listening, love like you’ve never been hurt, dance like nobody’s watching, and live like it’s heaven on earth. – (Attributed to various sources)",
+        "Curiosity about life in all of its aspects, I think, is still the secret of great creative people. – Leo Burnett",
+        "Life is not a problem to be solved, but a reality to be experienced. – Søren Kierkegaard",
+        "The unexamined life is not worth living. – Socrates",
+        "Turn your wounds into wisdom. – Oprah Winfrey",
+        "The purpose of our lives is to be happy. – Dalai Lama",
+        "Life is what happens when you’re busy making other plans. – John Lennon",
+        "You only live once, but if you do it right, once is enough. – Mae West",
+        "Never let the fear of striking out keep you from playing the game. – Babe Ruth",
+        "Money and success don’t change people; they merely amplify what is already there. – Will Smith",
+        "Your time is limited, so don’t waste it living someone else’s life. – Steve Jobs",
+        "Not how long, but how well you have lived is the main thing. – Seneca",
+        "If life were predictable it would cease to be life, and be without flavor. – Eleanor Roosevelt",
+        // Add more quotes as desired
+    ];
+    const selectedQuote = quotes[dayOfYear % quotes.length];
+    document.getElementById('quoteContainer').innerText = selectedQuote;
+}
+
